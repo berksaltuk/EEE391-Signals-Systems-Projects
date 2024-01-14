@@ -1,0 +1,25 @@
+
+Also, you can find some clarifications about the assignment questions in the pharagraphs below.
+
+PART-3
+
+In order to prevent data loss after delay operation, you can add zeros at the beginning and end of the 
+input array as many as the number of maximum delay amount. 
+For example when x = [1,2,3,4] and the delay amount is in the interval of [-3,3], 
+you can apply zero padding to input x as x = [0,0,0,1,2,3,4,0,0,0]. After this operation you can 
+apply time delay in the given interval without any information loss.
+e.g. [0,0,0,1,2,3,4,0,0,0] -> delayed by 3 -> [0,0,0,0,0,0,1,2,3,4]
+
+After zero padding, you can implement delay function by using the pseudocode given below or you can 
+use your own method.
+if(delay>0):
+x_delayed = zeros(1,length(x))
+x_delayed(delay+1:length(x)) = x(1:length(x)-delay)
+else:
+x_delayed = zeros(1,length(x))
+x_delayed(1:length(x)+ delay) = x(-delay+1:length(x))
+
+
+PART-4
+You can use x1 =[-3 -4 2 0 1 4 3 6 3 7] as the input for this part. You should test the 
+system for all the values of n from 1 to N. (N is the greatest index number of the input)
